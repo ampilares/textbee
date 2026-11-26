@@ -1,0 +1,21 @@
+{
+  "name": "textbee-selfhosted-mcp",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node src/main.mjs",
+    "test": "node --test test/*.test.mjs",
+    "check": "node --check src/server.mjs && node --check src/main.mjs && node --check src/upstream-fetch.mjs"
+  },
+  "dependencies": {
+    "@textbee/mcp": "0.3.0",
+    "@modelcontextprotocol/sdk": "1.32.2"
+  },
+  "overrides": {
+    "@modelcontextprotocol/sdk": "1.32.2"
+  }
+}

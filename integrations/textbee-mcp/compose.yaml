@@ -1,0 +1,21 @@
+name: textbee-mcp
+services:
+  textbee-mcp:
+    build: .
+    restart: unless-stopped
+    environment:
+      TEXTBEE_BASE_URL: https://textbee.allenmaripilares.com/api/v1
+      MCP_PUBLIC_URL: https://textbee.allenmaripilares.com/mcp
+    networks:
+      textbee:
+        aliases:
+          - textbee-mcp
+    mem_limit: 256m
+    cpus: 0.5
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+networks:
+  textbee:
+    external: true
+    name: textbee-local_default
