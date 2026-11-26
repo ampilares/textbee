@@ -1,10 +1,11 @@
 # Self-hosted TextBee MCP for Grok Bot
 
-Planned remote MCP URL: **https://textbee.allenmaripilares.com/mcp**
+Remote MCP URL: **https://textbee.allenmaripilares.com/mcp**
 
-Deployment status: the container is running and healthy, but the tunnel reload was
-denied by the execution approval prompt. The public URL still returns 404 until
-the validated tunnel route is loaded. The source and configuration are ready.
+Deployment verified: the service is healthy and the public route is active.
+Requests without a key return HTTP 401 with instructions for the header; invalid
+keys are rejected with HTTP 401. The API health route returns HTTP 200. A valid
+production key and an actual Grok Bot connection have not yet been tested.
 
 This service wraps the official `@textbee/mcp` tools with MCP Streamable HTTP. It
 always talks to `https://textbee.allenmaripilares.com/api/v1`; callers cannot choose
